@@ -5,23 +5,15 @@ export default class DemoLogin extends Component {
     result: "default value",
   };
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
-
-    this.setState(
-      {
-        result: "Dang nhap thanh cong",
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
-  }
+    this.setState({ result: "Dang nhap thanh cong" });
+  };
 
   render() {
     return (
       <div className="container">
-        <form className="card w-25 mx-auto mt-3" onSubmit={this.handleSubmit}>
+        <form className="card w-50 mx-auto mt-3" onSubmit={this.handleSubmit}>
           <div className="card-header bg-dark text-white text-center">Login</div>
           <div className="card-body">
             <p>Username</p>
@@ -33,7 +25,7 @@ export default class DemoLogin extends Component {
             <button className="btn btn-success">Login</button>
           </div>
         </form>
-        <div className="alert alert-success w-25 mx-auto mt-3">{this.state.result}</div>
+        <div className="alert alert-success w-50 mx-auto mt-3">{this.state.result}</div>
       </div>
     );
   }
